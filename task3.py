@@ -9,6 +9,7 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 from utils.dataset import TeamMateDataset
 from torchvision.models import mobilenet_v3_small
+from torchvision.transforms import RandomRotation, RandomHorizontalFlip
 
 
 if __name__ == '__main__':
@@ -53,6 +54,10 @@ if __name__ == '__main__':
             images = images.reshape(-1, 3, 64, 64).to(device)
             # labels = labels.reshape(-1, 1).to(device)
             labels = labels.to(device)
+
+            #Transforms
+            flip_transform = RandomHorizontalFlip(p=0.5)
+            images = flip_transform(images)
 
             # Zero the parameter gradients
             optimizer.zero_grad()
