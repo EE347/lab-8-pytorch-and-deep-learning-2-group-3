@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 from utils.dataset import TeamMateDataset
 from torchvision.models import mobilenet_v3_small
-from torchvision.transforms import RandomRotation
+from torchvision.transforms import RandomRotation, RandomHorizontalFlip
 
 
 if __name__ == '__main__':
