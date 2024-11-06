@@ -15,8 +15,8 @@ class TeamMateDataset(Dataset):
         else:
             dataset_type = 'test'
 
-        subject_0 = os.listdir(f'lab8/data/{dataset_type}/0')
-        subject_1 = os.listdir(f'lab8/data/{dataset_type}/1')
+        subject_0 = os.listdir(f'data/{dataset_type}/0')
+        subject_1 = os.listdir(f'data/{dataset_type}/1')
 
         assert len(subject_0) >= n_images and len(subject_1) >= n_images, f'Number of images in each folder should be {n_images}'
 
@@ -35,7 +35,7 @@ class TeamMateDataset(Dataset):
             else:
                 subject = 0
 
-            image = cv2.imread(f'lab8/data/{dataset_type}/{subject}/' + image_path)
+            image = cv2.imread(f'data/{dataset_type}/{subject}/' + image_path)
 
             # Resize the image to 64x64
             image = cv2.resize(image, (64, 64))
