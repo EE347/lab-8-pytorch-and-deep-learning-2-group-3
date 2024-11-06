@@ -154,7 +154,7 @@ if __name__ == '__main__':
         plt.xlabel('Epoch')
         plt.ylabel('Loss')
         plt.legend()
-        plt.savefig('task2_loss_plot.png')
+        plt.savefig('task5_loss_plot.png')
         
         # Tabulate the results
         table = PrettyTable()
